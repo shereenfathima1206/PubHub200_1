@@ -25,7 +25,20 @@ public Book findOne(Long id) {
 		return bookRepository.findOne(id);
 	}
 
-
+public List<Book> priceDesc() {
+	return bookRepository.findByOrderByPriceDesc();
 }
 
-//refer st
+public List<Book> priceAsc() {
+	return bookRepository.findByOrderByPriceAsc();
+}
+public List<Book> specificBook(String name){
+	System.out.println("Service reached");
+	return bookRepository.findByName(name);
+}
+
+
+
+
+
+}
